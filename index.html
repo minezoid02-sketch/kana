@@ -12,6 +12,13 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx"></script> 
+    <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/kana/service-worker.js")
+      .then(() => console.log("Service Worker registered"))
+      .catch(err => console.log("Service Worker failed:", err));
+  }
+</script>
   </body>
 </html>
